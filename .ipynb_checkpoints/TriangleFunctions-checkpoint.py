@@ -139,11 +139,11 @@ def drawTriangle(steps, startPoint, points, points_to_draw):
         
         # prevent program from drawing outside of triangle
         while(True):
-            if((cur_largest == dist1) and (inter1[1] > points[1][1])):
+            if((cur_largest == dist1) and (inter1[1] >= points[1][1])):
                 cur_largest = largest[next_indx]
-            if((cur_largest == dist2) and (inter2[1] > points[1][1])):
+            if((cur_largest == dist2) and (inter2[1] >= points[1][1])):
                 cur_largest = largest[next_indx]
-            if((cur_largest == dist3) and (inter3[1] > points[1][1])):
+            if((cur_largest == dist3) and (inter3[1] >= points[1][1])):
                 cur_largest = largest[next_indx]
             else:
                 break
