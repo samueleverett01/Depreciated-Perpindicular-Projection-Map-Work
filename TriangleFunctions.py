@@ -147,6 +147,7 @@ def drawTriangle(steps, startPoint, points, points_to_draw):
                 cur_largest = largest[next_indx]
             else:
                 break
+                
             
         # if two distances are the same pick a random one to follow
         if(cur_largest == next_largest):
