@@ -7,3 +7,5 @@ revealing some interesting patterns and formulas that arise out of the process.
 This notebook is intentionally light on both the mathematics and computer science aspects of the process,
 as the write up is meant to simply display the interesing shapes this algorithm "comes up with".  To see the
 code that I wrote to make the algorithm, see `TriangleFunctions.py`.
+
+The **A Curious Algorithm.pdf** file gives an updated, more thorough write-up in LaTeX form.
