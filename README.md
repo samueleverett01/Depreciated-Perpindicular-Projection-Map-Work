@@ -1,6 +1,6 @@
 # A-Curious-Algorithm
 
-In the "Curious Algorithm" notebook, I implement a simple "right angle" algorithm that produces interesting 
+In the "Curious Algorithm" notebook, I implement an iterate function that produces interesting 
 repeating geometric shapes out of triangles.  In the notebook, I analyze some examples of these different shapes,
 revealing some interesting patterns and formulas that arise out of the process.
 
