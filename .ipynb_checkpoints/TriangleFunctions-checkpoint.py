@@ -3,6 +3,9 @@ import matplotlib.pyplot as plt
 import random
 import heapq
 
+    
+# code for producing graphs
+
 def findFunc(point1, point2):
     """find the linear function that fits two points"""
     #if((point1[0] == 0.0) and (point2[0] == 0.0)):
@@ -129,6 +132,7 @@ def drawTriangle(steps, startPoint, points, points_to_draw):
         
         dist1 = dist(current_point, inter1)
         dist2 = dist(current_point, inter2)
+        #dist3 = current_point[1]
         dist3 = dist(current_point, inter3)
         
         # use largest to pick the longest distance to travel within triangle
@@ -137,8 +141,9 @@ def drawTriangle(steps, startPoint, points, points_to_draw):
         next_indx = largest.index(cur_largest) + 1
         next_largest = largest[next_indx]
         
+        
         # prevent program from drawing outside of triangle
-        while(True):
+        """while(True):
             if((cur_largest == dist1) and (inter1[1] >= points[1][1])):
                 cur_largest = largest[next_indx]
             if((cur_largest == dist2) and (inter2[1] >= points[1][1])):
@@ -146,9 +151,8 @@ def drawTriangle(steps, startPoint, points, points_to_draw):
             if((cur_largest == dist3) and (inter3[1] >= points[1][1])):
                 cur_largest = largest[next_indx]
             else:
-                break
-                
-            
+                break"""
+                  
         # if two distances are the same pick a random one to follow
         if(cur_largest == next_largest):
             # make a random choice between the two
@@ -165,7 +169,7 @@ def drawTriangle(steps, startPoint, points, points_to_draw):
             if(largest_pick == dist3):
                 current_point = inter3
                 visited_points.append(current_point)
-            
+        
         if(cur_largest != next_largest):   
             # if all different distances and within rules, move to the new point
             if(cur_largest == dist1):
@@ -177,6 +181,7 @@ def drawTriangle(steps, startPoint, points, points_to_draw):
             if(cur_largest == dist3):
                 current_point = inter3
                 visited_points.append(current_point)
+        
     
     # plot the points of the stepping process
     x = []
@@ -192,12 +197,14 @@ def drawTriangle(steps, startPoint, points, points_to_draw):
     yT = [points[0][1], points[1][1], points[2][1], points[0][1]]
     
     fig, ax = plt.subplots(dpi=144)
-    ax.plot(xT, yT)
-    ax.plot(x, y)
-    #ax.scatter(x, y)
-    plt.xlim(-.5, (points[2][0]+.5))
-    plt.ylim(-.5, (points[1][1]+.5))
+    ax.plot(xT, yT, color='black')
+    ax.plot(x, y, color="black")
+
+    plt.xlim(-.05, (points[2][0]+.05))
+    plt.ylim(-.05, (points[1][1]+.05))
     plt.gca().set_aspect('equal', adjustable='box')
+    
+    plt.axis('off')
     
     plt.draw
 
@@ -212,15 +219,10 @@ def give_info(visited_points, points):
     # outer triangle information
     print("Outer Triangle Information: \n Inner angles: ", [round(i) for i in (return_angles(points[0], points[1], points[2]))])
     
-    #print("\nSide lengths: ", \
-     #     dist(points[0], points[1]), dist(points[1], points[2]), dist(points[0], points[2]))
-    
     if(visited_points[-4:-1] == visited_points[-7:-4]):
         iPoints = visited_points[-4:-1]
         print("\n\nInner Triangle Information: \n Inner angles: ", [round(i) for i in (return_angles(iPoints[0], iPoints[1], iPoints[2]))])
-        
-        #print("\nInner triangle side lengths: ",\
-         #    dist(iPoints[0], iPoints[1]), dist(iPoints[1], iPoints[2]), dist(iPoints[2], iPoints[0]), "\n")
+
     
     if(visited_points[-4:] == visited_points[-8:-4]):
         mid1 = midpoint(visited_points[-2], visited_points[-3])
