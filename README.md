@@ -1,11 +1,7 @@
-# A-Curious-Algorithm
+# The dynamics of a "Projected Anglular Step Function"
 
-In the "Curious Algorithm" notebook, I implement an iterate function that produces interesting 
-repeating geometric shapes out of triangles.  In the notebook, I analyze some examples of these different shapes,
-revealing some interesting patterns and formulas that arise out of the process.
+This repository contains the programs used to simulate the application of an iterated step function over triangles.  The application of this function over triangles generates a discrete dynamical system, and this software is used to gain an intuition into the behavior of the system.  The bifurcation diagram represents the dynamics of the system over isosceles triangles.
 
-This notebook is intentionally light on both the mathematics and computer science aspects of the process,
-as the write up is meant to simply display the interesing shapes this algorithm "comes up with".  To see the
-code that I wrote to make the algorithm, see `TriangleFunctions.py`.
+The `TriangleFunctions.py` is the program used to generate the diagrams, and the different bifurcation diagram notebooks are used to generate variants of the bifurcation diagrams.
 
-The **A Curious Algorithm.pdf** file gives an updated, more thorough write-up in LaTeX form.
+The **A Curious Algorithm.pdf** file gives a simple discription of the system, written for a math magazine.  
